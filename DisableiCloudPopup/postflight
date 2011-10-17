@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for user in $3/Users/*
+do
+	if [ "${user}" != "/Users/Shared" ]
+		then	
+			defaults write $3$user/Library/Preferences/com.apple.SetupAssistant DidSeeCloudSetup -bool TRUE
+			# Troubleshooting line
+			#echo $3$user
+	fi
+done	
