@@ -1,0 +1,6 @@
+To use this package you need to do a few things:
+
+1.  Download the Firefox CCK (https://addons.mozilla.org/en-US/firefox/addon/cck/) and generate a CCK for your company.
+2.  Place the CCK you've generated into this folder: FirefoxDefaultSettings/Mozilla/Extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/
+3.  Customize the Makefile to match your company's specifics
+4.  Type either 'make pkg' or 'make dog' and you are done.
