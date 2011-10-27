@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Insert your serial number in this function (after the -s)
+serializeAcrobat()
+{
+    "/private/tmp/adobe_provisioning_tool.app/Contents/MacOS/adobe_provisioning_tool" -C -a "/Library/Application Support/Adobe/Acrobat 10 AMT/AMT" -s 1111-1111-1111-1111-1111-1111
+    if (test $? = 0) then
+        echo "Acrobat X serialized."
+    else
+        echo "ERROR: Acrobat X serialization failed."
+    fi
+}
+
+suppressAcrobatEULA()    
+{
+    "/private/tmp/adobe_provisioning_tool.app/Contents/MacOS/adobe_provisioning_tool" -S -a "/Library/Application Support/Adobe/Acrobat 10 AMT/AMT"
+    if (test $? = 0) then
+        echo "Acrobat X EULA suppressed."
+    else
+        echo "ERROR: Acrobat X EULA suppression failed."
+    fi
+}
+
+suppressAdobeIDDialog()    
+{
+    "/private/tmp/adobe_provisioning_tool.app/Contents/MacOS/adobe_provisioning_tool" -R -a "/Library/Application Support/Adobe/Acrobat 10 AMT/AMT"
+    if (test $? = 0) then
+        echo "Acrobat X Adobe ID suppressed."
+    else
+        echo "ERROR: Acrobat X Adobe ID suppression failed."
+    fi
+}
+
+serializeAcrobat
+suppressAcrobatEULA
+suppressAdobeIDDialog
+
+exit 0

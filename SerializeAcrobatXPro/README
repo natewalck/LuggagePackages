@@ -1,0 +1,6 @@
+This will create a package that can serialize your Acrobat X Pro Installation.
+
+To use this package, you need to do three things:
+1.  Download the adobe_provisioning_tool.app and place it into the same folder as the Makefile (See ftp://ftp.adobe.com/pub/adobe/acrobat/mac/10.x/10.0.0/misc/)
+2.  Enter your serial # in the postflight script.  It currently has placeholders (1111-1111-1111-1111-1111-1111)
+3.  Run 'make pkg' or 'make dmg' and you are done!
